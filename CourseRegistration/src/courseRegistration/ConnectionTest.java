@@ -8,8 +8,8 @@ public class ConnectionTest {
 	public static void main(String[] args) {
 
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
-		String username = "hr";
-		String password = "hr";
+		String username = "javauser";
+		String password = "java1234";
 		Connection connection = null;
 
 		try {
