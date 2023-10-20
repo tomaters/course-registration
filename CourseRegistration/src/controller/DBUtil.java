@@ -5,23 +5,30 @@
   */
 package controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 // The database utility class provides methods to establish and manage connections, execute queries, and more
 public class DBUtil {
-	// connect to Oracle database using account javauser
-	public static Connection makeConnection() {
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
-		String username = "javauser";
-		String password = "java1234";
+	// Properties; connect to Oracle database using account details from properties file
+	public static Connection makeConnection() throws Exception {
+		Properties properties = new Properties();
 		Connection connection = null;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			FileInputStream fileInputStream = new FileInputStream("src/config/db.properties");
+			properties.load(fileInputStream);
+			String driver = properties.getProperty("driver");
+			String url = properties.getProperty("url");
+			String username = properties.getProperty("username");
+			String password = properties.getProperty("password");
+			
+			Class.forName(driver);
 			connection = DriverManager.getConnection(url, username, password);
-//			System.out.println("connected (test)");
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (IOException | ClassNotFoundException | SQLException e){
 			System.out.printf("Error: %s", e);
 		}
 		return connection;
