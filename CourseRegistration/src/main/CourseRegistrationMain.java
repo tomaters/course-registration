@@ -82,8 +82,10 @@ public class CourseRegistrationMain {
 		switch(input) {
 		case StudentSelection.viewStudentInfo :
 			studentRegisterManager.viewStudentInfo();
+			break;
 		case StudentSelection.addStudentInfo :
 			studentRegisterManager.addStudentInfo();
+			break;
 		case StudentSelection.editStudentInfo :
 			studentRegisterManager.editStudentInfo();
 		case StudentSelection.returnToMenu : 

@@ -122,8 +122,8 @@ public class StudentVO {
 		return student_date;
 	}
 
-	public void setStudent_date(Date student_date) {
-		this.student_date = student_date;
+	public void setStudent_date(Date date) {
+		this.student_date = date;
 	}
 
 	@Override
