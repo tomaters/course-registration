@@ -54,7 +54,7 @@ public class MajorVO {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(serial_num);
+		return Objects.hash(serial_num, this.major_code, this.major_name);
 	}
 
 	@Override
@@ -63,6 +63,7 @@ public class MajorVO {
 			return false;
 		}
 		MajorVO majorVO = (MajorVO)obj;
-		return this.serial_num == majorVO.serial_num;
+		return this.serial_num == majorVO.serial_num && this.major_code == majorVO.major_code &&
+			this.major_name == majorVO.major_name;
 	}
 }

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 // The database utility class provides methods to establish and manage connections, execute queries, and more
 public class DBUtil {
 	// connect to Oracle database using account javauser
-	public void makeConnection() {
+	public static Connection makeConnection() {
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
 		String username = "javauser";
 		String password = "java1234";
@@ -24,5 +24,6 @@ public class DBUtil {
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.printf("Error: %s", e);
 		}
+		return connection;
 	}
 }

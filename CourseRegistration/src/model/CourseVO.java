@@ -51,7 +51,7 @@ public class CourseVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(serial_num);
+		return Objects.hash(this.serial_num, this.course_abv, this.course_name);
 	}
 
 	@Override
@@ -60,6 +60,7 @@ public class CourseVO {
 			return false;
 		}
 		CourseVO courseVO = (CourseVO)obj;
-		return this.serial_num == courseVO.serial_num;
+		return this.serial_num == courseVO.serial_num && this.course_abv == courseVO.course_abv &&
+			this.course_name == courseVO.course_name;
 	}
 }

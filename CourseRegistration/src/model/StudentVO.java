@@ -136,7 +136,8 @@ public class StudentVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(serial_num);
+		return Objects.hash(this.serial_num, this.student_num, this.student_name, this.student_id, this.student_pass,
+				this.major_code, this.student_bday, this.student_phone, this.student_address, this.student_email, this.student_date);
 	}
 
 	@Override
@@ -145,6 +146,10 @@ public class StudentVO {
 			return false;
 		}
 		StudentVO studentVO = (StudentVO)obj;
-		return this.serial_num == studentVO.serial_num;
+		return this.serial_num == studentVO.serial_num && this.student_num == studentVO.student_num && this.student_name == studentVO.student_name &&
+				this.student_id == studentVO.student_id && this.student_pass == studentVO.student_pass &&
+				this.major_code == studentVO.major_code && this.student_bday == studentVO.student_bday &&
+				this.student_phone == studentVO.student_phone && this.student_address == studentVO.student_address &&
+				this.student_email == studentVO.student_email && this.student_date == studentVO.student_date;
 		}
 	}

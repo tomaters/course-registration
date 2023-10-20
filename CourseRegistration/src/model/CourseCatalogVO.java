@@ -77,7 +77,7 @@ public class CourseCatalogVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(serial_num);
+		return Objects.hash(serial_num, this.student_num, this.course_abv, this.course_type, this.reg_date);
 	}
 
 	@Override
@@ -86,7 +86,9 @@ public class CourseCatalogVO {
 			return false;
 		}
 		CourseCatalogVO courseCatalogVO = (CourseCatalogVO)obj;
-		return this.serial_num == courseCatalogVO.serial_num;
+		return this.serial_num == courseCatalogVO.serial_num && this.student_num == courseCatalogVO.student_num &&
+			this.course_abv == courseCatalogVO.course_abv && this.course_type == courseCatalogVO.course_type &&
+			this.reg_date == courseCatalogVO.reg_date;
 	}
 }
 

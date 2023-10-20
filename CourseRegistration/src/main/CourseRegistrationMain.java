@@ -53,12 +53,16 @@ public class CourseRegistrationMain {
 		switch(input) {
 		case MajorSelection.viewMajorInfo : 
 			majorRegisterManager.viewMajorInfo();
+			break;
 		case MajorSelection.addMajorInfo :
 			majorRegisterManager.addMajorInfo();
+			break;
 		case MajorSelection.editMajorInfo :
 			majorRegisterManager.editMajorInfo();
+			break;
 		case MajorSelection.deleteMajorInfo :
 			majorRegisterManager.deleteMajorInfo();
+			break;
 		case MajorSelection.returnToMenu : 
 			System.out.println("Returning to main menu");
 			return;
