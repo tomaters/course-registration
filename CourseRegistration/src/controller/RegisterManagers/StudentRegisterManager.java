@@ -13,7 +13,24 @@ public class StudentRegisterManager {
 	public static Scanner scan = new Scanner(System.in);
 	
 	public static void viewStudentInfo() throws Exception {
-		
+		StudentDAO studentDAO = new StudentDAO();
+		String username, password = null;
+		boolean checkLogin = false; 
+
+		System.out.println("Login to view student information");
+		// do-while statement to allow login attempts
+		do {
+			System.out.println("Username:");
+			username = scan.nextLine();
+			System.out.println("Password:");
+			password = scan.nextLine();
+			// call method to check login credentials; if true, exit loop
+			checkLogin = studentDAO.studentLogin(username, password);
+			if(!checkLogin) {
+				System.out.println("The username and password you entered is incorrect");
+			}
+		} while(!checkLogin);
+		studentDAO.viewStudentInfo(username, password);
 	}
 	
 	public static void addStudentInfo() throws Exception {

@@ -91,7 +91,7 @@ public class CourseRegistrationMain {
 		case StudentSelection.returnToMenu : 
 			System.out.println("Returning to main menu");
 			return;
-			default : System.out.println("Please enter a number in the menu");
+		default : System.out.println("Please enter a number in the menu");
 		}
 	}
 
@@ -134,14 +134,14 @@ public class CourseRegistrationMain {
 		MenuViewer.scan.nextLine(); // clear buffer
 		
 		switch(input) {
-		case CourseCatalogSelection.viewReg : 
+		case CourseCatalogSelection.viewRegistration : 
 			System.out.println();
 			courseCatalogRegisterManager.viewRegistration();
 			break;
-		case CourseCatalogSelection.addReg :
+		case CourseCatalogSelection.addRegistration :
 			courseCatalogRegisterManager.addRegistration();
 			break;
-		case CourseCatalogSelection.cancelReg :
+		case CourseCatalogSelection.cancelRegistration :
 			courseCatalogRegisterManager.cancelRegistration();
 			break;
 		case CourseCatalogSelection.returnToMenu : 

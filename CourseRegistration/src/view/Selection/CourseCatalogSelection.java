@@ -1,8 +1,8 @@
 package view.Selection;
 
 public interface CourseCatalogSelection {
-	int viewReg = 1;
-	int addReg = 2;
-	int cancelReg = 3;
+	int viewRegistration = 1;
+	int addRegistration = 2;
+	int cancelRegistration = 3;
 	int returnToMenu = 4;
 }
